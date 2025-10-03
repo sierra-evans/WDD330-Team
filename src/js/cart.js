@@ -2,6 +2,7 @@ import { getLocalStorage } from "./utils.mjs";
 
 function renderCartContents() {
   let cartItems = getLocalStorage("so-cart");
+  // Fixes the error that pops up with no items in cart by just making the innerHTML of product list to say "No itmes in cart". It then returns, so the foreach loop later does not run, and does not cause the error.
   if (!cartItems) {
     document.querySelector(".product-list").innerHTML =
       "<li>No items in cart</li>";
