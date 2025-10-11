@@ -202,6 +202,37 @@ button {
   grid-column: 3;
 }
 
+.cart-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1.5em;
+  padding: 1em;
+  border-top: 2px solid Black;
+  font-size: large;
+  font-weight: bold;
+  color: darkgray;
+  background-color: white;
+}
+
+.hide {
+  display: none;
+}
+
+.remove-items {
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+  font-size: 1.2em;
+  float: right;
+  margin-right: 0.5em;
+  transition: color 0.4s;
+}
+
+.remove-item:hover {
+  color: darkred;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
