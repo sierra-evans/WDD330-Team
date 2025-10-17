@@ -48,3 +48,8 @@ function computeDiscount(listPrice, finalPrice) {
 
 // Only run on pages that have a product-list
 document.addEventListener("DOMContentLoaded", () => renderTopProducts());
+import productList from "./productList.mjs";
+import loadHeaderFooter from "./utils.mjs";
+
+productList(".product-list", "tents");
+loadHeaderFooter();
