@@ -12,6 +12,21 @@ function addToCart() {
   setLocalStorage("so-cart", product);
 }
 function renderProductDetails() {
+  const addBtn = document.querySelector("#addToCart");
+  const productSection = document.querySelector(".product-detail");
+
+  // Handle product not found
+  if (!product) {
+    console.error("Product not found for ID:", product);
+    
+    // Show user-friendly error message
+    productSection.innerHTML = `<p class="product-error">Sorry, this product was not found.</p>`;
+    
+    // Hide Add to Cart button
+    if (addBtn) addBtn.style.display = "none";
+    return;
+  }
+  
   document.querySelector("#productName").innerText = product.Brand.Name;
   document.querySelector("#productNameWithoutBrand").innerText =
     product.NameWithoutBrand;
