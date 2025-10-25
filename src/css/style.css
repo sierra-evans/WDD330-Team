@@ -94,6 +94,9 @@ button {
 .divider {
   border-bottom: 2px solid var(--primary-color);
 }
+.title {
+  text-transform: capitalize;
+}
 /* End utility classes */
 
 /* Cart icon styles */
@@ -111,6 +114,39 @@ button {
 }
 
 /* End cart icon styles */
+
+/* product grid styles */
+.product-grid {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  color: var(--dark-grey);
+  padding-left: 0;
+}
+
+.product-grid > li {
+  width: 150px;
+  /* border: 1px solid var(--light-grey); */
+  padding: 0.5em;
+  margin: 1em;
+}
+.product-grid h2 {
+  margin: 0;
+
+  font-size: 1.2em;
+}
+.product-grid a {
+  text-decoration: none;
+}
+.product-grid a:link,
+.product-grid a:visited {
+  color: var(--dark-grey);
+}
+.product-grid a:hover {
+  text-decoration: underline;
+}
 
 .mission {
   padding: 0 0.5em;
@@ -140,6 +176,7 @@ button {
   padding: 0.5em;
   border: 1px solid var(--light-grey);
   max-width: 250px;
+  text-align: center;
 }
 .product-card h2,
 .product-card h3,
@@ -154,28 +191,6 @@ button {
 .card__name {
   font-size: 1em;
 }
-/* thumbnail wrapper to position badge */
-.product-card__thumb {
-  position: relative;
-}
-.product-card__thumb img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-/* discount badge */
-.discount-badge {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  background: #e63946; /* red */
-  color: white;
-  padding: 4px 8px;
-  font-weight: 700;
-  border-radius: 4px;
-  font-size: 0.85em;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-}
 /* End product list card */
 
 .product-detail {
@@ -186,16 +201,6 @@ button {
 
 .product-detail img {
   width: 100%;
-}
-
-/* product detail image wrapper to position the discount badge */
-.product-detail__thumb {
-  position: relative;
-}
-.product-detail__thumb .discount-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
 }
 
 /* Start cart list card styles */
