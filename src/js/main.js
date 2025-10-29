@@ -53,3 +53,20 @@ function computeDiscount(listPrice, finalPrice) {
 
 // Only run on pages that have a product-list
 document.addEventListener("DOMContentLoaded", () => renderTopProducts());
+
+// Newsletter Form Handling
+document.addEventListener("DOMContentLoaded", () => {
+	const button = document.getElementById("subscribe-btn");
+	const message = document.getElementById("newsletter-message");
+	const input = document.getElementById("email");
+  
+	button.addEventListener("click", () => {
+	  // Show message
+	  message.textContent = "Thank you for subscribing!";
+	  message.style.color = "#2a5934";
+  
+	  // Clear input
+	  input.value = "";
+	});
+  });
+  
