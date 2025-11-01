@@ -6,13 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sleep Outside | Home</title>
   <link rel="stylesheet" href="/css/style.css" />
-  <script src="js/main.js" type="module"></script>
+  <script src="js/main.js" type="module" defer></script>
 </head>
 
 <body>
   <header class="divider" id="main-header">
   </header>
   <main class="divider">
+    <!-- Register Modal -->
+    <div id="signupModal">
+      <div class="modal-content">
+        <h2>Join Our Giveaway!</h2>
+        <p>Register now for a chance to win amazing prizes!</p>
+        <button id="closeModal">Close</button>
+        <a href="/register"><button>Register</button></a>
+      </div>
+    </div>    
+    <!-- End of Register Modal -->
     <div class="hero">
       <img src="/images/banner-sm.jpg" srcset="images/banner-sm.jpg 500w, images/banner.jpg"
         alt="image of a high mountain lake" />
