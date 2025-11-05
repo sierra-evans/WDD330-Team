@@ -42,7 +42,7 @@ export function renderListWithTemplate(
   parentElement.insertAdjacentHTML(position, htmlString.join(""));
 }
 
-export function renderWithTemplate(
+export async function renderWithTemplate(
   templateFn,
   parentElement,
   data,
@@ -52,13 +52,11 @@ export function renderWithTemplate(
   if (clear) {
     parentElement.innerHTML = "";
   }
-  parentElement.insertAdjacentHTML(position, template);
+  const htmlString = await templateFn(data);
+  parentElement.insertAdjacentHTML(position, htmlString);
   if (callback) {
     callback(data);
   }
-
-  const htmlString = data.map(templateFn);
-  parentElement.insertAdjacentHTML(position, htmlString.join(""));
 }
 
 function loadTemplate(path) {
