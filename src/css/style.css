@@ -239,6 +239,25 @@ button {
   grid-column: 3;
 }
 
+.cart a {
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* alert styles */
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+  background-color: var(--primary-color);
+  border: 1px solid darkorange;
+}
+.alert > p {
+  margin: 0;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
