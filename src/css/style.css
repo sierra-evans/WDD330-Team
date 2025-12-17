@@ -258,24 +258,47 @@ footer {
   padding: 1em;
 }
 
-/* Register Modal Styling */
-#signupModal {
-  display: none;
+/* Modal Styles */
+.modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.5);
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 1000;
 }
 
-#signupModal .modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 400px;
+.modal-content {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 2rem;
+  border-radius: 12px;
   text-align: center;
+  max-width: 400px;
+}
+
+.modal .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: var(--accent-color);
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }

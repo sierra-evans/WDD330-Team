@@ -6,22 +6,19 @@ loadHeaderFooter();
 productList(".product-list", "tents");
 
 // Register Modal
-function showSignupModal() {
-    const modal = document.getElementById("signupModal");
-    const closeBtn = document.getElementById("closeModal");
-  
-    if (!modal) return;
-  
-    if (!localStorage.getItem("modalShown")) {
-      modal.style.display = "flex";
-      localStorage.setItem("modalShown", "true");
-    }
-  
-    closeBtn?.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-  }
-  
-  window.addEventListener("load", showSignupModal);
+const modal = document.getElementById("welcome-modal");
+const closeBtn = document.getElementById("close-modal");
+
+// Check if the visitor has been here before
+if (!localStorage.getItem("hasVisited")) {
+  modal.classList.remove("hidden"); // Show modal
+  localStorage.setItem("hasVisited", "true"); // Mark as visited
+}
+
+// Close modal on click
+closeBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+
   // End of Register Modal
   
