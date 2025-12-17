@@ -6,10 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sleep Outside | Home</title>
   <link rel="stylesheet" href="/css/style.css" />
-  <script src="js/main.js" type="module"></script>
+  <script src="js/main.js" type="module" defer></script>
 </head>
 
 <body>
+  <!-- First-time visitor modal -->
+  <div id="welcome-modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <h2>Welcome to Sleep Outside!</h2>
+      <p>Register today and enter our giveaway for a free camping set!</p>
+      <a href="register.html" class="btn">Register Now</a>
+    </div>
+  </div>
   <header class="divider" id="main-header">
   </header>
   <main class="divider">
