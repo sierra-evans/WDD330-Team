@@ -1,5 +1,5 @@
-import { findProductById } from "./productData.mjs";
-import { setLocalStorage, getLocalStorage } from "./utils.mjs";
+import { findProductById } from "./externalServices.mjs";
+import { setLocalStorage, getLocalStorage, alertMessage } from "./utils.mjs";
 
 let product = {};
 
@@ -20,6 +20,7 @@ function addToCart() {
   // then add the current product to the list
   cartContents.push(product);
   setLocalStorage("so-cart", cartContents);
+  alertMessage(`${product.NameWithoutBrand} added to cart!`);
 }
 function renderProductDetails() {
   document.querySelector("#productName").innerText = product.Brand.Name;
@@ -27,7 +28,36 @@ function renderProductDetails() {
     product.NameWithoutBrand;
   document.querySelector("#productImage").src = product.Images.PrimaryLarge;
   document.querySelector("#productImage").alt = product.Name;
-  document.querySelector("#productFinalPrice").innerText = product.FinalPrice;
+  
+  // Display final price
+  document.querySelector("#productFinalPrice").innerText = `$${product.FinalPrice}`;
+  
+  // Calculate and display discount information
+  const suggestedPrice = product.SuggestedRetailPrice;
+  const finalPrice = product.FinalPrice;
+  
+  if (suggestedPrice && finalPrice < suggestedPrice) {
+    // There's a discount to display
+    const discountAmount = suggestedPrice - finalPrice;
+    const discountPercentage = Math.round((discountAmount / suggestedPrice) * 100);
+    
+    // Show discount badge
+    const discountBadge = document.querySelector("#discountBadge");
+    const discountPercentageEl = document.querySelector("#discountPercentage");
+    discountBadge.style.display = "block";
+    discountPercentageEl.innerText = `${discountPercentage}% OFF`;
+    
+    // Show original price with strikethrough
+    const originalPriceEl = document.querySelector("#productOriginalPrice");
+    originalPriceEl.style.display = "block";
+    originalPriceEl.innerText = `$${suggestedPrice.toFixed(2)}`;
+    
+    // Show savings amount
+    const savingsEl = document.querySelector("#productSavings");
+    savingsEl.style.display = "block";
+    savingsEl.innerText = `You save $${discountAmount.toFixed(2)}`;
+  }
+  
   document.querySelector("#productColorName").innerText =
     product.Colors[0].ColorName;
   document.querySelector("#productDescriptionHtmlSimple").innerHTML =
