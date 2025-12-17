@@ -20,5 +20,23 @@ closeBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
 });
 
+// Only run on pages that have a product-list
+document.addEventListener("DOMContentLoaded", () => renderTopProducts());
+
+// Newsletter Form
+document.addEventListener("DOMContentLoaded", () => {
+	const button = document.getElementById("subscribe-btn");
+	const message = document.getElementById("newsletter-message");
+	const input = document.getElementById("email");
+  
+	button.addEventListener("click", () => {
+	  // Show message
+	  message.textContent = "Thank you for subscribing!";
+	  message.style.color = "#2a5934";
+  
+	  // Clear input
+	  input.value = "";
+	});
+  });
   // End of Register Modal
   
