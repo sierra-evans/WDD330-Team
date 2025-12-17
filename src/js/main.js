@@ -54,7 +54,7 @@ function computeDiscount(listPrice, finalPrice) {
 // Only run on pages that have a product-list
 document.addEventListener("DOMContentLoaded", () => renderTopProducts());
 
-// Newsletter Form Handling
+// Newsletter Form
 document.addEventListener("DOMContentLoaded", () => {
 	const button = document.getElementById("subscribe-btn");
 	const message = document.getElementById("newsletter-message");
